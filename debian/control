@@ -1,0 +1,44 @@
+Source: properties-cpp
+Section: libs
+Priority: optional
+Maintainer: Debian UBports Team <team+ubports@tracker.debian.org>
+Uploaders:
+ The Ayatana Packagers <pkg-ayatana-devel@lists.alioth.debian.org>,
+ Mike Gabriel <sunweaver@debian.org>,
+Build-Depends: cmake,
+               cmake-extras (>= 1.5-5~),
+               debhelper-compat (= 13),
+               doxygen,
+               googletest,
+               graphviz,
+               libgtest-dev,
+               pkg-config,
+               rdfind,
+               symlinks,
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: https://gitlab.com/ubports/core/lib-cpp/properties-cpp/
+Vcs-Git: https://salsa.debian.org/ubports-team/properties-cpp.git
+Vcs-Browser: https://salsa.debian.org/ubports-team/properties-cpp
+
+Package: libproperties-cpp-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Suggests: libproperties-cpp-doc
+Depends: ${misc:Depends},
+Description: C++11 library providing properties/signals - dev headers
+ Properties-cpp is a C++11 library providing properties/signals.
+ .
+ This package includes all the development headers and libraries for
+ properties-cpp.
+
+Package: libproperties-cpp-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends},
+Description: Documentation files for libproperties-cpp-dev
+ Properties-cpp is a C++11 library providing properties/signals.
+ .
+ This package includes the documentation files for the libproperties-cpp
+ development.

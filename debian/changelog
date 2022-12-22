@@ -1,0 +1,165 @@
+properties-cpp (0.0.2-6) unstable; urgency=medium
+
+  * debian/control:
+    + Add B-D: pkg-config, required by 'find_package(GMock)' in cmake-extras.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 30 Oct 2020 14:14:06 +0100
+
+properties-cpp (0.0.2-5) unstable; urgency=medium
+
+  * debian/control:
+    + Update versioned B-D: cmake-extras (>= 1.5-5~). (Closes: #973163).
+    + Switch from transitional google-gmock to googletest.
+  * debian/patches:
+    + Add README, explaining our patch naming scheme.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 30 Oct 2020 09:42:13 +0100
+
+properties-cpp (0.0.2-4) unstable; urgency=medium
+
+  * debian/patches:
+    + Improve 1002_reproducible-builds.patch. Make build reproducible again.
+      (Closes: #961495). Thanks for Chris Lamb for providing the patch.
+  * debian/control:
+    + Bump DH compat level to version 13.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 18 Oct 2020 20:24:03 +0200
+
+properties-cpp (0.0.2-3) unstable; urgency=medium
+
+  * debian/rules:
+    + Drop override_dh_installchangelogs. No ChangeLog.bzr file anymore.
+      No upstream ChangeLog anymore at all for now.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 26 Jan 2020 14:43:57 +0100
+
+properties-cpp (0.0.2-2) unstable; urgency=medium
+
+  * debian/control:
+    + Update Vcs-*: fields. Move packaging Git over to Debian UBports team.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 26 Jan 2020 12:46:46 +0100
+
+properties-cpp (0.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/{copyright,rules}:
+    + Don't repack orig tarball anymore.
+  * debian/copyright:
+    + Drop Upstream-Contact: field. Needs to be replaced later.
+  * debian/control:
+    + Bump Standards-Version: to 4.5.0. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 26 Jan 2020 11:46:06 +0100
+
+properties-cpp (0.0.1~bzr17+repack1-4) unstable; urgency=medium
+
+  * debian/copyright:
+    + Add global Files-Excluded: field, drop global Comment: field.
+    + Update copyright attributions.
+  * debian/rules:
+    + Leave orig tarball (re)packing to uscan.
+  * debian/{control,copyright,watch}:
+    + Let UBports project become our new upstream location.
+  * debian/control:
+    + Move package maintainership over to the new 'Debian UBports Team'.
+    + Bump Standards-Version: to 4.4.1. No changes needed.
+    + Add Rules-Requires-Root: field and set it to 'no'.
+  * debian/{control,compat}:
+    + Switch to debhelper-compat notation. Bump DH compat level to version 12.
+  * debian/upstream/metadata:
+    + Add file. Be DEP-12 compliant.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 25 Jan 2020 14:45:53 +0100
+
+properties-cpp (0.0.1~bzr17+repack1-3) unstable; urgency=medium
+
+  * debian/control:
+    + Update Vcs-*: fields. Packaging Git has been migrated to salsa.debian.org.
+    + Bump Standars-Version: to 4.2.0. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 21 Aug 2018 17:49:44 +0200
+
+properties-cpp (0.0.1~bzr17+repack1-2) unstable; urgency=medium
+
+  [ Chris Lamb ]
+  * Make build reproducible. (Closes: #883339).
+  * debian/patches:
+    + Add 1002_reproducible-builds.patch. Make Doxygen build reproducible.
+  * debian/rules:
+    + Remove Doxygen's result.txt prior to packaging up.
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Bump Standards-Version: to 4.1.3. No changes needed.
+    + Drop '.' from SYNOPSIS field.
+  * debian/copyright:
+    + Use secure URI for copyright format reference.
+    + Add main Comment: field that explains why tarball was repacked.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 11 Mar 2018 21:55:30 +0100
+
+properties-cpp (0.0.1~bzr17+repack1-1) unstable; urgency=medium
+
+  * Initial upload to Debian. (Closes: #882585).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 24 Nov 2017 14:52:52 +0100
+
+properties-cpp (0.0.1+14.10.20140730-0ubuntu1) utopic; urgency=low
+
+  [ Marcus Tomlinson ]
+  * Renamed "slots" to "slot_list" in signal.h as to avoid clashing with
+    the "slots" Qt keyword. (LP: #1329743)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 30 Jul 2014 15:09:54 +0000
+
+properties-cpp (0.0.1+14.04.20140220-0ubuntu1) trusty; urgency=low
+
+  [ thomas-voss ]
+  * Allow for dispatching setting and getting to functors.
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 20 Feb 2014 20:13:02 +0000
+
+properties-cpp (0.0.1+14.04.20140121-0ubuntu1) trusty; urgency=low
+
+  [ thomas-voss ]
+  * Refactor to rely on default move-operator for core::Connection.
+    Enable property chaining. Make sure that an abandoned connection
+    safely accesses its private member. Make ScopedConnection a movable
+    type.
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Let's get rid of lcov as a build-dep.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 12
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 21 Jan 2014 11:50:25 +0000
+
+properties-cpp (0.0.1+14.04.20140110-0ubuntu1) trusty; urgency=low
+
+  * Automatic snapshot from revision 9
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 10 Jan 2014 10:40:44 +0000
+
+properties-cpp (0.0.1+14.04.20131216-0ubuntu1) trusty; urgency=low
+
+  [ Thomas Voß ]
+  * Initial release.
+
+  [ thomas-voss ]
+  * Initial commit.
+  * Add packaging setup.
+  * Add a README.md. Add a COPYING file.
+  * Merged lp:~thomas-voss/properties-cpp/cleanup.
+  * Merged lp:~thomas-voss/properties-cpp/adjust-namespace-to-core.
+  * Merged lp:~thomas-voss/properties-cpp/fix-pkgconfig-include-path.
+  * Removed license statements from build files.
+
+  [ Timo Jyrinki ]
+  * s/process-cpp/properties-cpp/ and expanding descriptions.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 8
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Mon, 16 Dec 2013 08:17:31 +0000

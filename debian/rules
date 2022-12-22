@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DPKG_GENSYMBOLS_CHECK_LEVEL=4
+
+include /usr/share/dpkg/pkg-info.mk
+
+%:
+	dh $@
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+override_dh_changelog:
+	dh_changelog
+
+override_dh_install:
+	mkdir -p debian/tmp/usr/share/doc/libproperties-cpp-doc/html/
+	mv debian/tmp/usr/share/doc/properties-cpp/html/* debian/tmp/usr/share/doc/libproperties-cpp-doc/html/
+	cd debian/tmp/usr/share/doc/libproperties-cpp-doc/html/ && rdfind -makesymlinks true .
+	cd debian/tmp/usr/share/doc/libproperties-cpp-doc/html/ && symlinks -c .
+	rmdir debian/tmp/usr/share/doc/properties-cpp/html/
+	rm debian/tmp/usr/share/doc/libproperties-cpp-doc/html/*.md5
+	rm debian/tmp/usr/share/doc/libproperties-cpp-doc/html/results.txt
+	dh_install
+
+get-orig-source:
+	uscan --noconf --force-download --rename --download-current-version --destdir=..
